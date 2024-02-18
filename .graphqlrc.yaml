@@ -1,0 +1,2 @@
+schema: "src/gql/graphql.ts"
+documents: "src/queries/*.ts"

@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query GetLaunches {\n    launchesPast(limit: 5) {\n      mission_name\n      launch_date_local\n      launch_site {\n        site_name_long\n      }\n      rocket {\n        rocket_name\n        first_stage {\n          cores {\n            flight\n            core {\n              reuse_count\n              status\n            }\n          }\n        }\n      }\n    }\n  }\n": types.GetLaunchesDocument,
+    "\n    query GetLaunches ($limit:Int, $offset:Int, $order:String, $sort:String, $find:LaunchFind) {\n      launchesPast(limit: $limit, offset:$offset, order:$order, sort:$sort, find:$find) {\n        mission_name\n        launch_date_local\n      }\n    }\n": types.GetLaunchesDocument,
 };
 
 /**
@@ -33,7 +33,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query GetLaunches {\n    launchesPast(limit: 5) {\n      mission_name\n      launch_date_local\n      launch_site {\n        site_name_long\n      }\n      rocket {\n        rocket_name\n        first_stage {\n          cores {\n            flight\n            core {\n              reuse_count\n              status\n            }\n          }\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetLaunches {\n    launchesPast(limit: 5) {\n      mission_name\n      launch_date_local\n      launch_site {\n        site_name_long\n      }\n      rocket {\n        rocket_name\n        first_stage {\n          cores {\n            flight\n            core {\n              reuse_count\n              status\n            }\n          }\n        }\n      }\n    }\n  }\n"];
+export function graphql(source: "\n    query GetLaunches ($limit:Int, $offset:Int, $order:String, $sort:String, $find:LaunchFind) {\n      launchesPast(limit: $limit, offset:$offset, order:$order, sort:$sort, find:$find) {\n        mission_name\n        launch_date_local\n      }\n    }\n"): (typeof documents)["\n    query GetLaunches ($limit:Int, $offset:Int, $order:String, $sort:String, $find:LaunchFind) {\n      launchesPast(limit: $limit, offset:$offset, order:$order, sort:$sort, find:$find) {\n        mission_name\n        launch_date_local\n      }\n    }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

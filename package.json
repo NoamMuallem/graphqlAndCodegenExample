@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "@apollo/client": "^3.9.5",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.0",
     "graphql": "^16.8.1",
+    "graphql-language-service-server": "^2.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/client-preset": "4.2.2",
     "@graphql-codegen/typescript": "^4.0.4",
     "@graphql-codegen/typescript-resolvers": "^4.0.4",
     "@types/react": "^18.2.55",
@@ -29,7 +32,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "typescript": "^5.2.2",
-    "vite": "^5.1.0",
-    "@graphql-codegen/client-preset": "4.2.2"
+    "vite": "^5.1.0"
   }
 }

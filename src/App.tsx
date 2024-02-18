@@ -1,9 +1,10 @@
-import { useQuery } from "@apollo/client";
-import { GET_LAUNCHES } from "./queries/launchesPast";
-import { GetLaunchesQueryVariables, GetLaunchesQuery } from "./gql/graphql";
+import { useGetLaunchesQuery } from "./gql/graphql";
 
 function App() {
-  const { loading, error, data, refetch } = useQuery<GetLaunchesQuery, GetLaunchesQueryVariables>(GET_LAUNCHES, {
+  const { loading, error, data, refetch } = useGetLaunchesQuery({
+    variables:{
+      limit:5
+    },
     onError: (error) => console.error("Error fetching launches:", error),
     onCompleted: (data) => console.log("Launch data:", data),
   });
